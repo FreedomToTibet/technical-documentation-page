@@ -1,1 +1,1 @@
-# technical-documentation-page
+Just example with a fixed aside
