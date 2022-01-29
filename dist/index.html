@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>CodePen - Technical Documentation Page - freeCodeCamp</title>
+  <link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<!DOCTYPE html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale-1.0">
+    <title>CSS - Cascading Stylesheets</title>
+    <link rel="stylesheet" href="./style.css">
+  </head>
+
+<html>
+<nav id="nav-bar">
+  <header>Cascading Stylesheets</header>
+  <ul>
+    <li><a class="nav-link" href="#CSS_syntax">CSS syntax</a></li>
+    <li><a class="nav-link" href="#CSS_Modules">CSS Modules</a></li>
+    <li><a class="nav-link" href="#Adding_a_class">Adding a class</a></li>
+    <li><a class="nav-link" href="#Applying_CSS_to_your_HTML">Applying CSS to your HTML</a></li>
+    <li><a class="nav-link" href="#Selectors">Selectors</a></li>
+    <li><a class="nav-link" href="#Properties_and_values">Properties and values</a></li>
+    <li><a class="nav-link" href="#Functions">Functions</a></li>
+    <li><a class="nav-link" href="#Shorthands">Shorthands</a></li>
+    <li><a class="nav-link" href="#Conflicting_rules">Conflicting rules</a></li>    
+    <li><a class="nav-link" href="#Understanding_the_cascade">Understanding the cascade</a></li>
+  </ul>
+</nav>
+
+<body>
+<main id="main-doc">
+  <div class="menu-icon-wrapper">
+    <div class="menu-icon-line"></div>    
+  </div>
+  
+  <h2>CSS - Cascading Stylesheets</h2>
+   <section class="main-section" id="CSS_syntax">
+    <header>CSS syntax</header>
+      <article>
+      <p>
+        CSS is a rule-based language - you define rules specifying groups of styles that should be applied to particular 
+        elements or groups of elements on your web page. For example "I want the main heading on my page to be shown as 
+        large red text."
+      </p>
+      <p>
+        The following code shows a very simple CSS rule that would achieve the styling described above:
+          <pre><code>h1 {
+  color: red;
+  font-size: 5em;
+  }</code></pre>
+      </p>
+      </article>
+  </section>
+  <section class="main-section" id="CSS_Modules">
+    <header>CSS Modules</header>
+      <article>
+      <p>
+        As there are so many things that you could style using CSS, the language is broken down into modules. You'll 
+        ee reference to these modules as you explore MDN and many of the documentation pages are organized around a 
+        particular module. For example, you could take a look at the MDN reference to the Backgrounds and Borders module 
+        to find out what its purpose is, and what different properties and other features it contains. You will also 
+        find links to the CSS Specification that defines the technology (see below).
+      </p>
+      <p>
+        At this stage you don't need to worry too much about how CSS is structured, however it can make it easier to 
+        find information if, for example, you are aware that a certain property is likely to be found among other similar 
+        things and are therefore probably in the same specification.
+      </p>
+      <p>
+        For a specific example, let's go back to the Backgrounds and Borders module - you might think that it makes 
+        logical sense for the background-color and border-color properties to be defined in this module. And you'd be right.
+      </p>
+      </article>
+  </section>
+  <section class="main-section" id="Adding_a_class">
+    <header>Adding a class</header>
+      <article>
+      <p>
+        So far we have styled elements based on their HTML element names. This works as long as you want all of the 
+        elements of that type in your document to look the same. Most of the time that isn't the case and so you will 
+        need to find a way to select a subset of the elements without changing the others. The most common way to do 
+        this is to add a class to your HTML element and target that class.
+      </p>
+      <p>
+        In your HTML document, add a class attribute to the second list item. Your list will now look like this: 
+        
+<pre><code>&lt;ul&gt;
+  &lt;li&gt;Item one&lt;/li&gt;
+  &lt;li <strong>class="special"</strong>&gt;Item two&lt;/li&gt;
+  &lt;li&gt;Item &lt;em&gt;three&lt;/em&gt;&lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+      </p>
+      <p>
+        In your CSS you can target the class of special by creating a selector that starts with a full stop character. 
+        Add the following to your CSS file:
+        <pre><code>.special {
+  color: orange;
+  font-weight: bold;
+  }
+        </code></pre>
+      </p>
+      </article>
+  </section>
+  <section class="main-section" id="Applying_CSS_to_your_HTML">
+    <header>Applying CSS to your HTML</header>
+      <article>
+      <ul>
+        <li>External stylesheet</li>
+        <li>Internal stylesheet</li>
+        <li>Inline styles</li>
+      <p>
+        An external stylesheet is when you have your CSS written in a separate file with a .css extension, and you reference 
+        it from an HTML <code>&lt;link&gt;</code> element.
+      </p>
+      <p>
+        An internal stylesheet is where you don't have an external CSS file, but instead place your CSS inside a 
+        "style" element contained inside the HTML.
+      </p>
+      <p>
+        Inline styles are CSS declarations that affect one element only, contained within a style attribute.
+      </p>
+      </article>
+  </section>
+  <section class="main-section" id="Selectors">
+    <header>Selectors</header>
+      <article>
+      <p>
+        You can't talk about CSS without meeting selectors, and we have already discovered several different types in 
+        the Getting started with CSS tutorial. A selector is how we target something in our HTML document in order 
+        to apply styles to it. If your styles are not applying then it is likely that your selector does not match 
+        the thing you think it should match.
+      </p>
+      <p>
+        Each CSS rule starts with a selector or a list of selectors in order to tell the browser which element or 
+        elements the rules should apply to. All of the following are examples of valid selectors, or lists of selectors.
+      </p>
+      </article>
+  </section>
+  <section class="main-section" id="Properties_and_values">
+    <header>Properties and values</header>
+      <article>
+      <p>
+        At its most basic level, CSS consists of two building blocks:
+          <ul>
+            <li><b>Properties</b>: Human-readable identifiers that indicate which stylistic features (e.g. font-size, width, background-color) you want to change.</li>
+            <li><b>Values</b>: Each specified property is given a value, which indicates how you want to change those stylistic features (e.g. what you want to change the font, width or background color to.)</li>
+          </ul>
+      </p>
+      <p>
+        Setting CSS properties to specific values is the core function of the CSS language. The CSS engine calculates 
+        which declarations apply to every single element of a page in order to appropriately lay it out and style it. 
+        What is important to remember is that both properties and values are case-sensitive in CSS. The property 
+        and value in each pair is separated by a colon (:).
+      </p>
+      </article>
+  </section>
+  <section class="main-section" id="Functions">
+    <header>Functions</header>
+      <article>
+      <p>
+        While most values are relatively simple keywords or numeric values, there are some possible values which take 
+        the form of a function. An example would be the calc() function. This function allows you to do simple math from 
+        within your CSS, for example:
+      </p>
+      <p>
+        <div class="outer"><div class="box">The inner box is 90% - 30px.</div></div>
+
+          <pre><code>.outer {
+  border: 5px solid black;
+  }
+
+.box {
+  padding: 10px;
+  width: calc(90% - 30px);
+  background-color: rebeccapurple;
+  color: white;
+  }
+        </code></pre>
+      </p>
+      <p>
+        A function consists of the function name, and then some brackets into which the allowed values for that function 
+        are placed. In the case of the calc() example above I am asking for the width of this box to be 90% of the 
+        containing block width, minus 30 pixels. This isn't something I can calculate ahead of time and just enter the 
+        value into the CSS, as I don't know what 90% will be. As with all values, the relevant page on MDN will have 
+        usage examples so you can see how the function works.
+      </p>
+      </article>
+  </section>
+  <section class="main-section" id="Shorthands">
+    <header>Shorthands</header>
+      <article>
+      <p>
+        Some properties like 
+        <ul>
+          <li>font</li>
+          <li>background</li>
+          <li>padding</li>
+          <li>border</li>
+          <li>margin</li>
+        </ul>
+        are called shorthand properties - this is because they allow you to set several property values in a single line, 
+        saving time and making your code neater in the process.
+      </p>
+      <p>
+        We won't attempt to teach these exhaustively now - you'll come across many examples later on in the course, and 
+        you are advised to look up the shorthand property names in our CSS reference to find out more.
+      </p>
+      </article>
+  </section>
+  <section class="main-section" id="Conflicting_rules">
+    <header>Conflicting rules</header>
+      <article>
+      <p>
+        CSS stands for Cascading Style Sheets, and that first word cascading is incredibly important to understand - the 
+        way that the cascade behaves is key to understanding CSS.
+      </p>
+      <p>
+        The cascade, and the closely-related concept of specificity, are mechanisms that control which rule applies when there is such a conflict:
+        <ul>
+          <li>The cascade</li>
+          <li>Specificity</li>
+          <li>Inheritance</li>
+        </ul>
+      </p>
+      <p>CSS provides four special universal property values for controlling inheritance. Every CSS property accepts these values.
+        <ul>
+          <li>inherit</li>
+          <li>initial</li>
+          <li>unset</li>
+        </ul>
+      </p>
+      </article>
+  </section>
+  <section class="main-section" id="Understanding_the_cascade">
+    <header>Understanding the cascade</header>
+      <article>
+      <p>
+        We now understand why a paragraph nested deep in the structure of your HTML is the same color as the CSS applied to the 
+        body, and from the introductory lessons we have an understanding of how to change the CSS applied to something at any 
+        point in the document — whether by assigning CSS to an element or creating a class. We will now take a proper look at 
+        how the cascade defines which CSS rules apply when more than one thing could style an element.
+      </p>
+      <p>
+        There are three factors to consider, listed here in decreasing order of importance. Earlier ones overrule later ones:
+        <ul>
+          <li>Importance</li>
+          <li>Specificity</li>
+          <li>Source order</li>
+        </ul>
+      </p>
+      </article>
+  </section>
+</main>
+</body>
+
+<footer>
+  All the documentation in this page is taken from <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide" target="_blank">MDN</a>
+  <span>Copyright 2020</span>
+</footer>
+</html>
+<!-- partial -->
+  <script  src="./script.js"></script>
+
+</body>
+</html>
