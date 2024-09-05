@@ -1,1 +1,1 @@
-### Example with fixed фышву and links with transitions within the technical documention page
+### Example with fixed aside and links with transitions within the technical documention page
